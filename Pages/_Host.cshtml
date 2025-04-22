@@ -1,0 +1,128 @@
+﻿@page "/"
+@namespace BlazorAppPaginationClient.Pages
+@using System.Threading
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="@Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlazorAppPaginationClient</title>
+    <base href="~/" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="BlazorAppPaginationClient.styles.css" rel="stylesheet" />
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- JS библиотеки за експорт -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+
+    <!-- Твој скрипт -->
+    <script src="js/site.js"></script>
+
+    <!-- Blazor -->
+    <script src="_framework/blazor.server.js"></script>
+</head>
+<body>
+    <component type="typeof(App)" render-mode="ServerPrerendered" />
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <script>
+        // Export PDF функција
+        function exportTableToPdf() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('landscape');
+            doc.text("Taxi Rides List", 14, 16);
+            doc.autoTable({
+                html: '.table',
+                startY: 30,
+                margin: { top: 20 },
+                theme: 'grid',
+                columnStyles: {
+                    0: { cellWidth: 10 },
+                    1: { cellWidth: 20 },
+                    2: { cellWidth: 20 },
+                    3: { cellWidth: 20 },
+                    4: { cellWidth: 20 },
+                    5: { cellWidth: 20 },
+                    6: { cellWidth: 20 },
+                    7: { cellWidth: 20 },
+                    8: { cellWidth: 20 },
+                    9: { cellWidth: 20 },
+                    10: { cellWidth: 20 },
+                    11: { cellWidth: 20 },
+                    12: { cellWidth: 20 },
+                    13: { cellWidth: 20 },
+                    14: { cellWidth: 20 },
+                    15: { cellWidth: 20 },
+                    16: { cellWidth: 20 }
+                }
+            });
+            doc.save('taxi_rides_list.pdf');
+        }
+
+        // Export Excel функција
+        function exportToExcel(paginatedData, filename = 'taxi_rides.xlsx') {
+            if (!paginatedData || paginatedData.length === 0) {
+                console.error("No data to export");
+                return;
+            }
+
+            const ws = XLSX.utils.json_to_sheet(paginatedData);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, 'Taxi Rides');
+            XLSX.writeFile(wb, filename);
+        }
+
+        // Export CSV функција
+        function exportToCsv(data, filename = 'taxi_rides.csv') {
+            if (!data || data.length === 0) {
+                alert("No data to export.");
+                return;
+            }
+
+            const header = ['medallion', 'hashLicense', 'pickupTime', 'dropOffTime', 'duration', 'distance', 'pLongitude', 'pLatitude', 'dLongitude', 'dLatitude', 'paymentType', 'fareAmount', 'surcharge', 'tax', 'tipAmount', 'tollsAmount', 'totalAmount'];
+
+            const rows = data.map(item => [
+                item.medallion, item.hashLicense, item.pickupTime, item.dropOffTime, item.duration, item.distance,
+                item.pLongitude, item.pLatitude, item.dLongitude, item.dLatitude, item.paymentType, item.fareAmount,
+                item.surcharge, item.tax, item.tipAmount, item.tollsAmount, item.totalAmount
+            ]);
+
+            const csvContent = [header, ...rows].map(e => e.join(",")).join("\n");
+
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement("a");
+            if (link.download !== undefined) {
+                const url = URL.createObjectURL(blob);
+                link.setAttribute("href", url);
+                link.setAttribute("download", filename);
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
+    </script>
+</body>
+</html>
+
+
