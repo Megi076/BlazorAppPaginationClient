@@ -3,16 +3,16 @@
 	<!-- 
     Microsoft ResX Schema 
     
-    Version 2.0
+    Verzija 2.0
     
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
+    Glavni ciljevi ovog formata su omogućiti jednostavan XML format 
+    koji je uglavnom čitljiv za ljude. Generacija i parsiranje različitih 
+    tipova podataka vrši se putem TypeConverter klasa povezanih sa 
+    tim tipovima podataka.
     
-    Example:
+    Primer:
     
-    ... ado.net/XML headers & schema ...
+    ... ado.net/XML zaglavlja i šema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
     <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
@@ -27,37 +27,37 @@
         <comment>This is a comment</comment>
     </data>
                 
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
+    Postoji bilo koji broj "resheader" redova koji sadrže jednostavne 
+    name/value parove.
     
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
+    Svaki "data" red sadrži ime i vrednost. Red takođe sadrži 
+    tip ili mimetip. Tip odgovara .NET klasi koja podržava 
+    konverziju teksta/vrednosti putem TypeConverter arhitekture. 
+    Klase koje ne podržavaju ovo se serijalizuju i čuvaju sa 
+    postavljenim mimetipom.
     
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
+    Mimetip se koristi za serijalizovane objekte i govori 
+    ResXResourceReader-u kako da deserijalizuje objekat. Ovo trenutno nije 
+    proširivo. Za dati mimetip, vrednost mora biti postavljena odgovarajuće:
     
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
+    Napomena - application/x-microsoft.net.object.binary.base64 je format 
+    koji će generisati ResXResourceWriter, međutim čitač može 
+    pročitati bilo koji od formata navedenih ispod.
     
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
+    mimetip: application/x-microsoft.net.object.binary.base64
+    vrednost   : Objekat mora biti serijalizovan sa 
+                : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+                : i zatim kodiran sa base64 enkodiranjem.
     
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
+    mimetip: application/x-microsoft.net.object.soap.base64
+    vrednost   : Objekat mora biti serijalizovan sa 
+                : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+                : i zatim kodiran sa base64 enkodiranjem.
 
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
+    mimetip: application/x-microsoft.net.object.bytearray.base64
+    vrednost   : Objekat mora biti serijalizovan u niz bajtova 
+                : pomoću System.ComponentModel.TypeConverter-a
+                : i zatim kodiran sa base64 enkodiranjem.
     -->
 	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
 		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -118,25 +118,25 @@
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
 	<data name="Taxi Rides" xml:space="preserve">
-    <value>Такси Возења</value>
+    <value>Такси Возила</value>
   </data>
 	<data name="Search" xml:space="preserve">
-    <value>Пребарување</value>
+    <value>Претрага</value>
   </data>
 	<data name="Page Size" xml:space="preserve">
-    <value>Големина на страница</value>
+    <value>Величина странице</value>
   </data>
 	<data name="Total Records" xml:space="preserve">
-    <value>Вкупно записи</value>
+    <value>Укупно записа</value>
   </data>
 	<data name="Loading..." xml:space="preserve">
-    <value>Се вчитува...</value>
+    <value>Учитавање...</value>
   </data>
 	<data name="Previous" xml:space="preserve">
     <value>Претходна</value>
   </data>
 	<data name="Next" xml:space="preserve">
-    <value>Следна</value>
+    <value>Следећа</value>
   </data>
 	<data name="Page" xml:space="preserve">
     <value>Страница</value>
@@ -145,72 +145,72 @@
     <value>од</value>
   </data>
 	<data name="Enter Page" xml:space="preserve">
-    <value>Внеси страница</value>
+    <value>Унесите страницу</value>
   </data>
 	<data name="Go" xml:space="preserve">
-    <value>Оди</value>
+    <value>Иди</value>
   </data>
 	<data name="Export to CSV" xml:space="preserve">
-    <value>Извези во CSV</value>
+    <value>Извези у CSV</value>
   </data>
 	<data name="Export to Excel" xml:space="preserve">
-    <value>Извези во Excel</value>
+    <value>Извези у Excel</value>
   </data>
 	<data name="Export to PDF" xml:space="preserve">
-    <value>Извези во PDF</value>
+    <value>Извези у PDF</value>
   </data>
 	<data name="medallion" xml:space="preserve">
-    <value>Медалјон</value>
+    <value>Медаљон</value>
   </data>
 	<data name="hashLicense" xml:space="preserve">
     <value>Хеш лиценца</value>
   </data>
 	<data name="pickupTime" xml:space="preserve">
-    <value>Време на подигнување</value>
+    <value>Време преузимања</value>
   </data>
 	<data name="dropOffTime" xml:space="preserve">
-    <value>Време на симнување</value>
+    <value>Време испуштања</value>
   </data>
 	<data name="duration" xml:space="preserve">
-    <value>Траење</value>
+    <value>Трајање</value>
   </data>
 	<data name="pLongitude" xml:space="preserve">
-    <value>Географска должина (поаѓање)</value>
+    <value>Географска дужина (пауза)</value>
   </data>
 	<data name="pLatitude" xml:space="preserve">
-    <value>Географска ширина (поаѓање)</value>
+    <value>Географска ширина (поађање)</value>
   </data>
 	<data name="dLongitude" xml:space="preserve">
-    <value>Географска должина (дестинација)</value>
+    <value>Географска дужина (дестинација)</value>
   </data>
 	<data name="dLatitude" xml:space="preserve">
     <value>Географска ширина (дестинација)</value>
   </data>
 	<data name="paymentType" xml:space="preserve">
-    <value>Тип на плаќање</value>
+    <value>Тип плаћања</value>
   </data>
 	<data name="fareAmount" xml:space="preserve">
-    <value>Цена на возење</value>
+    <value>Цена возања</value>
   </data>
 	<data name="surcharge" xml:space="preserve">
     <value>Доплата</value>
   </data>
 	<data name="tax" xml:space="preserve">
-    <value>Данок</value>
+    <value>Порез</value>
   </data>
 	<data name="tipAmount" xml:space="preserve">
-    <value>Бакшиш</value>
+    <value>Тип</value>
   </data>
 	<data name="tollsAmount" xml:space="preserve">
-    <value>Патарини</value>
+    <value>Путне таксе</value>
   </data>
 	<data name="totalAmount" xml:space="preserve">
-    <value>Вкупен износ</value>
+    <value>Укупни износ</value>
   </data>
 	<data name="AppTitle" xml:space="preserve">
-    <value>Преглед на такси возења</value>
+    <value>Преглед такси возила</value>
   </data>
 	<data name="distance" xml:space="preserve">
-    <value>Растојание</value>
+    <value>Удаљеност</value>
   </data>
 </root>

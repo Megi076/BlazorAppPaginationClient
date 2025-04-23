@@ -1,25 +1,21 @@
 ﻿@inject NavigationManager NavigationManager
 @using System.Globalization
 
-<select @onchange="OnLanguageChanged" class="form-select w-auto">
-    <option value="en-US" selected="@IsSelected("en-US")">English</option>
-    <option value="mk-MK" selected="@IsSelected("mk-MK")">Македонски</option>
-    <option value="sr-RS" selected="@IsSelected("sr-RS")">Srpski</option>
+<select @onchange="OnLanguageChanged" class="form-select w-auto" value="@CultureInfo.CurrentUICulture.Name">
+    <option value="en-US">English</option>
+    <option value="mk-MK">Македонски</option>
+    <option value="sr-RS">Srpski</option>
 </select>
 
 @code {
-    private async Task OnLanguageChanged(ChangeEventArgs e)
+    private Task OnLanguageChanged(ChangeEventArgs e)
     {
         var culture = e.Value?.ToString() ?? "en-US";
         var currentUrl = NavigationManager.Uri;
-        var redirectUrl = $"/culture/setculture?culture={culture}&redirectUri={Uri.EscapeDataString(currentUrl)}";
-        NavigationManager.NavigateTo(redirectUrl, forceLoad: true);
-    }
 
-    private string IsSelected(string culture)
-    {
-        var currentCulture = CultureInfo.CurrentUICulture.Name;
-        return currentCulture.Equals(culture, StringComparison.InvariantCultureIgnoreCase) ? "selected" : null;
+        var redirectUrl = $"/culture/setculture?culture={culture}&redirectUri={Uri.EscapeDataString(currentUrl)}";
+
+        NavigationManager.NavigateTo(redirectUrl, forceLoad: true);
+        return Task.CompletedTask;
     }
 }
-

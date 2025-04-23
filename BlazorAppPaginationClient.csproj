@@ -15,16 +15,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resourses\SharedResource.en.resx">
+    <EmbeddedResource Update="Resourses\SharedResource.en-US.resx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resourses\SharedResource.mk.resx">
+    <EmbeddedResource Update="Resourses\SharedResource.mk-MK.resx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resourses\SharedResource.resx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Resourses\SharedResource.sr.resx">
+    <EmbeddedResource Update="Resourses\SharedResource.sr-RS.resx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

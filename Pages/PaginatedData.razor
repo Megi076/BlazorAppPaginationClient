@@ -11,14 +11,7 @@
 <h3>@L["TaxiRides"]</h3>
 
 <div class="controls-container">
-    <div class="language-selector">
-        <label>@L["Language"]</label>
-        <select @onchange="OnLanguageChanged">
-            <option value="en">English</option>
-            <option value="mk">Македонски</option>
-            <option value="sr">Српски</option>
-        </select>
-    </div>
+   
     <div class="search-box">
         <label>@L["SearchLabel"]</label>
         <input type="text" @bind="SearchText" @bind:event="oninput" placeholder="@L["SearchPlaceholder"]" class="search-input" />
