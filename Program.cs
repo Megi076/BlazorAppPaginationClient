@@ -10,9 +10,9 @@ builder.Services.AddLocalization(options => options.ResourcesPath = "Resources")
 // ? Define supported cultures
 var supportedCultures = new[]
 {
-    new CultureInfo("en"),
-    new CultureInfo("mk"),
-    new CultureInfo("sr")
+    new CultureInfo("en-US"),
+    new CultureInfo("mk-MK"),
+    new CultureInfo("sr-RS")
 };
 
 // ? Configure RequestLocalizationOptions
